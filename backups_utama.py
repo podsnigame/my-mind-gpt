@@ -65,12 +65,3 @@ if st.button("Show History"):
         reader = csv.reader(f)
         rows = list(reader)
         st.table(rows)
-
-        # Add a download button for the query history
-        csv_data = '\n'.join([','.join(row) for row in rows])
-        st.download_button(
-            label="Download Query History",
-            data=csv_data,
-            file_name="query_history.csv",
-            mime="text/csv"
-        )
